@@ -1,38 +1,37 @@
 # About
 
-A `string` in Go is an immutable sequence of bytes. Strings may contain arbitrary bytes but usually they contain human-readable text.
-Text strings are conventionally interpreted as UTF-8 encoded sequence of Unicode code points (runes) which will be explained in a future exercise.
-A `string` value can be written as a string literal, which is a sequence of bytes enclosed in double quotes:
+A `string` in Go is an immutable sequence of bytes, which don't necessarily have to represent characters.
+
+A string literal is defined between double quotes:
 
 ```go
-s := "Hello World!"
+const name = "Jane"
 ```
 
-The `+` operator makes a new string by [concatenating][string concatenation] two strings:
+Some values need to be escaped:
+
+| Value | Description          |
+| ----- | -------------------- |
+| `\a`  | Alert or bell        |
+| `\b`  | Backspace            |
+| `\\`  | Backslash            |
+| `\t`  | Horizontal tab       |
+| `\n`  | Line feed or newline |
+| `\f`  | Form feed            |
+| `\r`  | Carriage return      |
+| `\v`  | Vertical tab         |
+| `\'`  | Single quote         |
+| `\"`  | Double quote         |
 
 ```go
-fmt.Println("Hello" + " world!")
+const daltons = "Joe\nWilliam\nJack\nAverell"
 ```
 
-String values are immutable: the byte sequence contained in a string value can never be changed, though of course we can assign a new value to a string variable.
-To append one string to another, we can use the `+=` statement:
+Raw string literals use backticks (\`) as their delimiter instead of double quotes and are interpreted literally, meaning that there is no need to escape characters or newlines.
 
 ```go
-s := "Hello"
-s += " word."
-fmt.Println(s)
-// Output: Hello world.
+const daltons = `Joe
+William
+Jack
+Averell`
 ```
-
-Go provides an in-built package called `fmt` (format package) which offers a variety of functions to manipulate the format of input and output. The most common used functions to print output are `Println` and `Printf`.
-`Println` simply prints the input received on the console screen while `Printf` formats the input, using verbs like `%s` for strings, before printing it on the console.
-
-In Go floating point values are conveniently printed with Printf's verbs: `%g` (compact representation), `%e` (exponent) or `%f` (non exponent). All three verbs allow the field's width and numeric position to be controlled.
-
-```go
-f := 4.3242
-fmt.Printf("%.4", f)
-// Output: 4.32
-```
-
-[string concatenation]: https://golang.org/ref/spec

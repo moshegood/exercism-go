@@ -61,10 +61,12 @@
         "name": "Party Robot",
         "uuid": "b3594c44-1a68-489d-a446-16369247c84c",
         "concepts": [
-          "strings"
+          "string-formatting",
+          "packages"
         ],
         "prerequisites": [
-          "basics"
+          "strings",
+          "numbers"
         ],
         "status": "beta"
       },
@@ -88,9 +90,8 @@
           "constants"
         ],
         "prerequisites": [
-          "basics",
-          "comments",
-          "strings"
+          "numbers",
+          "type-definitions"
         ],
         "status": "beta"
       },
@@ -117,9 +118,9 @@
           "time"
         ],
         "prerequisites": [
-          "basics",
-          "strings",
-          "numbers"
+          "string-formatting",
+          "numbers",
+          "multiple-return-values"
         ],
         "status": "beta"
       },
@@ -128,12 +129,14 @@
         "name": "Cars Assemble",
         "uuid": "7ab1692d-b7e8-4f11-9bbd-2b855501e5ce",
         "concepts": [
+          "arithmetic-operators",
           "numbers",
           "type-conversion",
-          "conditionals-if"
+          "conditionals-if",
+          "comparison"
         ],
         "prerequisites": [
-          "constants"
+          "basics"
         ],
         "status": "beta"
       },
@@ -145,9 +148,10 @@
           "maps"
         ],
         "prerequisites": [
-          "basics",
           "conditionals-if",
-          "numbers"
+          "numbers",
+          "strings",
+          "conditionals-switch"
         ],
         "status": "beta"
       },
@@ -173,7 +177,8 @@
         ],
         "prerequisites": [
           "structs",
-          "strings"
+          "string-formatting",
+          "type-definitions"
         ],
         "status": "beta"
       },
@@ -185,7 +190,8 @@
           "errors"
         ],
         "prerequisites": [
-          "constants"
+          "string-formatting",
+          "multiple-return-values"
         ],
         "status": "wip"
       },
@@ -194,9 +200,11 @@
         "slug": "card-tricks",
         "uuid": "154660c2-db8c-4ec1-91f2-6b1275eabbc0",
         "concepts": [
-          "slices"
+          "slices",
+          "multiple-return-values"
         ],
         "prerequisites": [
+          "booleans",
           "numbers",
           "conditionals-if"
         ],
@@ -207,7 +215,7 @@
         "slug": "logs-logs-logs",
         "uuid": "81230a7c-4e47-4a4d-a004-14eae32ec914",
         "concepts": [
-          "strings-package"
+          "runes"
         ],
         "prerequisites": [
           "slices"
@@ -219,13 +227,14 @@
         "slug": "chessboard",
         "uuid": "b5f1c789-adf6-487c-95b0-c6bce23d711b",
         "concepts": [
-          "range-iteration"
+          "range-iteration",
+          "type-definitions"
         ],
         "prerequisites": [
           "conditionals-if",
           "maps",
           "slices",
-          "methods"
+          "structs"
         ],
         "status": "beta"
       },
@@ -238,15 +247,26 @@
         "status": "wip"
       },
       {
-        "name": "Zero, Zilch, Nada",
-        "slug": "zero-zilch-nada",
+        "name": "Census",
+        "slug": "census",
         "uuid": "fa4735f8-4d8a-4fb1-85ed-9cf03e9f7b7a",
         "concepts": [
-          "nil",
           "zero-values"
         ],
+        "prerequisites": [ "maps", "structs", "numbers", "string-formatting", "booleans", "methods", "slices", "conditionals-if" ],
+        "status": "beta"
+      },
+
+      {
+        "name": "Welcome To Tech Palace!",
+        "slug": "welcome-to-tech-palace",
+        "uuid": "934af0f6-87b3-424b-a255-60a9002360d4",
+        "concepts": [
+          "strings",
+          "strings-package"
+        ],
         "prerequisites": [
-          "maps"
+          "basics"
         ],
         "status": "beta"
       }
@@ -1757,6 +1777,11 @@
   },
   "concepts": [
     {
+      "name": "Arithmetic Operators",
+      "slug": "arithmetic-operators",
+      "uuid": "e01b00b9-5814-4784-a2f2-06182e8d9f7e"
+    },
+    {
       "name": "Basics",
       "slug": "basics",
       "uuid": "5d2b4677-1850-4ee4-890d-dc55a1654626"
@@ -1807,9 +1832,9 @@
       "uuid": "d25c6e6b-c6d4-40ce-80f9-cecbc5a72254"
     },
     {
-      "name": "Nil",
-      "slug": "nil",
-      "uuid": "c4d16fac-3e46-41ac-adf8-ce8f3f73f745"
+      "name": "Multiple Return Values",
+      "slug": "multiple-return-values",
+      "uuid": "ba2c60fd-7dc5-4852-93d0-83cc25554163"
     },
     {
       "name": "Numbers",
@@ -1817,9 +1842,19 @@
       "uuid": "82cff17e-88cd-4707-a6d7-b5143251f029"
     },
     {
+      "name": "Packages",
+      "slug": "packages",
+      "uuid": "2062bff8-33ed-4081-8ad6-774b3410c450"
+    },
+    {
       "name": "Range Iteration",
       "slug": "range-iteration",
       "uuid": "8f644992-59ec-4fff-8b40-36b5ed61404d"
+    },
+    {
+      "name": "Runes",
+      "slug": "runes",
+      "uuid": "6b221481-bbb3-4ccf-8be1-a5e0a20bbd01"
     },
     {
       "name": "Slices",
@@ -1829,6 +1864,11 @@
     {
       "name": "Strings",
       "slug": "strings",
+      "uuid": "43374ffa-090d-4295-802c-a3d9efc22c99"
+    },
+    {
+      "name": "String Formatting",
+      "slug": "string-formatting",
       "uuid": "eeae05c6-b751-44a2-b843-517ec7b83ef7"
     },
     {
@@ -1852,9 +1892,19 @@
       "uuid": "4f3d535e-cec8-4303-ac5a-ed91a53bd594"
     },
     {
+      "name": "Type Definitions",
+      "slug": "type-definitions",
+      "uuid": "ef4bfcfb-fa81-4d80-be63-a50c47653490"
+    },
+    {
       "name": "Zero Values",
       "slug": "zero-values",
       "uuid": "a50b4ed6-6198-4ab2-8075-3770900db4c9"
+    },
+    {
+      "name": "Comparison",
+      "slug": "comparison",
+      "uuid": "f7abb288-9526-447d-9eb8-45d756f2ae9b"
     }
   ],
   "key_features": [
